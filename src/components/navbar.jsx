@@ -7,8 +7,10 @@ import {
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useUser } from "../contexts/user-provider";
 
 export default function NavComponent() {
+  const { user, logOut } = useUser();
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function NavComponent() {
         color='blue-gray'
         className='p-1 font-normal'
       >
-        <a href='#' className='flex items-center'>
+        <a href='/' className='flex items-center'>
           Pages
         </a>
       </Typography>
@@ -36,7 +38,7 @@ export default function NavComponent() {
         color='blue-gray'
         className='p-1 font-normal'
       >
-        <a href='#' className='flex items-center'>
+        <a href='/' className='flex items-center'>
           Account
         </a>
       </Typography>
@@ -46,7 +48,7 @@ export default function NavComponent() {
         color='blue-gray'
         className='p-1 font-normal'
       >
-        <a href='#' className='flex items-center'>
+        <a href='/' className='flex items-center'>
           Blocks
         </a>
       </Typography>
@@ -56,7 +58,7 @@ export default function NavComponent() {
         color='blue-gray'
         className='p-1 font-normal'
       >
-        <a href='#' className='flex items-center'>
+        <a href='/' className='flex items-center'>
           Docs
         </a>
       </Typography>
@@ -78,13 +80,27 @@ export default function NavComponent() {
           />
         </Typography>
         <div className='hidden lg:block'>{navList}</div>
-        <Button
-          variant='filled'
-          size='sm'
-          className='hidden lg:inline-block bg-blue-800'
-        >
-          <span>Login</span>
-        </Button>
+        {user?.uid ? (
+          <Button
+            onClick={logOut}
+            variant='filled'
+            size='sm'
+            className='hidden lg:inline-block bg-blue-800'
+          >
+            Logout
+          </Button>
+        ) : (
+          <Link to={"/login"}>
+            <Button
+              variant='filled'
+              size='sm'
+              className='hidden lg:inline-block bg-blue-800'
+            >
+              <span>Login</span>
+            </Button>
+          </Link>
+        )}
+
         <IconButton
           variant='text'
           className='ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden'
@@ -125,9 +141,23 @@ export default function NavComponent() {
       </div>
       <MobileNav open={openNav}>
         {navList}
-        <Button variant='filled' size='sm' fullWidth className='mb-2'>
-          <span>Login</span>
-        </Button>
+        {user?.uid ? (
+          <Button
+            variant='filled'
+            size='sm'
+            fullWidth
+            className='mb-2'
+            onClick={logOut}
+          >
+            Logout
+          </Button>
+        ) : (
+          <Link to={"/login"}>
+            <Button variant='filled' size='sm' fullWidth className='mb-2'>
+              <span>Login</span>
+            </Button>
+          </Link>
+        )}
       </MobileNav>
     </Navbar>
   );
