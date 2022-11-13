@@ -42,26 +42,29 @@ export default function NavComponent() {
           Account
         </a>
       </Typography>
-      <Typography
-        as='li'
-        variant='small'
-        color='blue-gray'
-        className='p-1 font-normal'
-      >
-        <a href='/' className='flex items-center'>
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as='li'
-        variant='small'
-        color='blue-gray'
-        className='p-1 font-normal'
-      >
-        <a href='/' className='flex items-center'>
-          Docs
-        </a>
-      </Typography>
+      {user?.uid && (
+        <>
+          {" "}
+          <Typography
+            as={Link}
+            to='/doctor'
+            variant='small'
+            color='blue-gray'
+            className='p-1 font-normal'
+          >
+            <span className='flex items-center'>Register as Doctor</span>
+          </Typography>
+          <Typography
+            as={Link}
+            variant='small'
+            color='blue-gray'
+            to='/add-service'
+            className='p-1 font-normal'
+          >
+            <span className='flex items-center'>Add services</span>
+          </Typography>
+        </>
+      )}
     </ul>
   );
 
