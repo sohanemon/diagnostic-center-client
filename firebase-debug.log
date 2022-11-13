@@ -1,0 +1,121 @@
+[debug] [2022-11-13T13:35:03.243Z] ----------------------------------------------------------------------
+[debug] [2022-11-13T13:35:03.245Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2022-11-13T13:35:03.245Z] CLI Version:   11.15.0
+[debug] [2022-11-13T13:35:03.245Z] Platform:      linux
+[debug] [2022-11-13T13:35:03.245Z] Node Version:  v18.12.0
+[debug] [2022-11-13T13:35:03.246Z] Time:          Sun Nov 13 2022 19:35:03 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-11-13T13:35:03.246Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-13T13:35:03.299Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-13T13:35:03.299Z] > authorizing via signed-in user (mr.es20x@gmail.com)
+[debug] [2022-11-13T13:35:03.299Z] [iam] checking project shapla-diagnostic-center for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-13T13:35:03.301Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shapla-diagnostic-center:testIamPermissions [none]
+[debug] [2022-11-13T13:35:03.301Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/shapla-diagnostic-center:testIamPermissions x-goog-quota-user=projects/shapla-diagnostic-center
+[debug] [2022-11-13T13:35:03.301Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shapla-diagnostic-center:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-13T13:35:05.092Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/shapla-diagnostic-center:testIamPermissions 200
+[debug] [2022-11-13T13:35:05.093Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shapla-diagnostic-center:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-13T13:35:05.095Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shapla-diagnostic-center [none]
+[debug] [2022-11-13T13:35:05.802Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shapla-diagnostic-center 200
+[debug] [2022-11-13T13:35:05.802Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shapla-diagnostic-center {"projectId":"shapla-diagnostic-center","projectNumber":"591284152986","displayName":"shapla-diagnostic-center","name":"projects/shapla-diagnostic-center","resources":{"hostingSite":"shapla-diagnostic-center"},"state":"ACTIVE","etag":"1_ae23f0c7-15b4-46f2-8084-e381078ebc0f"}
+[info] 
+[info] === Deploying to 'shapla-diagnostic-center'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-11-13T13:35:05.816Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions [none]
+[debug] [2022-11-13T13:35:05.816Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-11-13T13:35:08.152Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions 200
+[debug] [2022-11-13T13:35:08.152Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions {"name":"projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[shapla-diagnostic-center]: beginning deploy... 
+[info] i  hosting[shapla-diagnostic-center]: found 14 files in build 
+[debug] [2022-11-13T13:35:08.185Z] [hosting] uploading with 200 concurrency
+[debug] [2022-11-13T13:35:08.187Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2022-11-13T13:35:08.692Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-11-13T13:35:08.692Z] [hosting][hash queue][FINAL] {"max":494,"min":12,"avg":51.5,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":502}
+[debug] [2022-11-13T13:35:08.692Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587:populateFiles [none]
+[debug] [2022-11-13T13:35:08.692Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587:populateFiles {"files":{"/asset-manifest.json":"b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0","/index.html":"2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10","/favicon.ico":"c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06","/manifest.json":"0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1","/robots.txt":"2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec","/logo192.png":"76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd","/logo512.png":"7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205","/static/js/787.53abdb55.chunk.js":"615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f","/static/js/main.d985bc0a.js.LICENSE.txt":"9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5","/static/js/787.53abdb55.chunk.js.map":"45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad","/static/css/main.85650a0a.css.map":"8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca","/static/css/main.85650a0a.css":"d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2","/static/js/main.d985bc0a.js":"63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0","/static/js/main.d985bc0a.js.map":"66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715"}}
+[debug] [2022-11-13T13:35:10.040Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587:populateFiles 200
+[debug] [2022-11-13T13:35:10.040Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587:populateFiles {"uploadRequiredHashes":["c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06","66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715","9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5","7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205","615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f","0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1","2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10","b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0","76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd","63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0","2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec","45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad","8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca","d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files"}
+[debug] [2022-11-13T13:35:10.053Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06 [none]
+[debug] [2022-11-13T13:35:10.054Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06 [stream]
+[debug] [2022-11-13T13:35:10.058Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715 [none]
+[debug] [2022-11-13T13:35:10.059Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715 [stream]
+[debug] [2022-11-13T13:35:10.064Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5 [none]
+[debug] [2022-11-13T13:35:10.064Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5 [stream]
+[debug] [2022-11-13T13:35:10.069Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205 [none]
+[debug] [2022-11-13T13:35:10.070Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205 [stream]
+[debug] [2022-11-13T13:35:10.074Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f [none]
+[debug] [2022-11-13T13:35:10.075Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f [stream]
+[debug] [2022-11-13T13:35:10.079Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1 [none]
+[debug] [2022-11-13T13:35:10.080Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1 [stream]
+[debug] [2022-11-13T13:35:10.084Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10 [none]
+[debug] [2022-11-13T13:35:10.084Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10 [stream]
+[debug] [2022-11-13T13:35:10.086Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0 [none]
+[debug] [2022-11-13T13:35:10.086Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0 [stream]
+[debug] [2022-11-13T13:35:10.088Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd [none]
+[debug] [2022-11-13T13:35:10.089Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd [stream]
+[debug] [2022-11-13T13:35:10.091Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0 [none]
+[debug] [2022-11-13T13:35:10.091Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0 [stream]
+[debug] [2022-11-13T13:35:10.093Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec [none]
+[debug] [2022-11-13T13:35:10.093Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec [stream]
+[debug] [2022-11-13T13:35:10.096Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad [none]
+[debug] [2022-11-13T13:35:10.096Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad [stream]
+[debug] [2022-11-13T13:35:10.098Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca [none]
+[debug] [2022-11-13T13:35:10.098Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca [stream]
+[debug] [2022-11-13T13:35:10.100Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2 [none]
+[debug] [2022-11-13T13:35:10.100Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2 [stream]
+[debug] [2022-11-13T13:35:10.102Z] [hosting][populate queue][FINAL] {"max":1362,"min":1362,"avg":1362,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1411}
+[debug] [2022-11-13T13:35:10.102Z] [hosting] uploads queued: 14
+[debug] [2022-11-13T13:35:11.797Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f 200
+[debug] [2022-11-13T13:35:11.798Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/615cc15ca87a88b42548f84f178b85ead729c2dde36c65ace7c8823004ea696f [stream]
+[debug] [2022-11-13T13:35:11.947Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2 200
+[debug] [2022-11-13T13:35:11.947Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/d37579fbac7cbb7d63a50e971180de781d88f85583634ca051e06bed5e0197e2 [stream]
+[debug] [2022-11-13T13:35:12.038Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0 200
+[debug] [2022-11-13T13:35:12.039Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/b173865549a98d50c6f0c60418ebff2a5076ac28bb459da9f1b3475c745270f0 [stream]
+[debug] [2022-11-13T13:35:12.244Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5 200
+[debug] [2022-11-13T13:35:12.244Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/9412ef20f13cb274eda4ae57f73e5ba60e3c3616b7b75258fdb9335deb486bf5 [stream]
+[debug] [2022-11-13T13:35:12.282Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd 200
+[debug] [2022-11-13T13:35:12.283Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd [stream]
+[debug] [2022-11-13T13:35:12.304Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec 200
+[debug] [2022-11-13T13:35:12.305Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec [stream]
+[debug] [2022-11-13T13:35:12.308Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205 200
+[debug] [2022-11-13T13:35:12.308Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205 [stream]
+[debug] [2022-11-13T13:35:12.427Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad 200
+[debug] [2022-11-13T13:35:12.428Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/45049afecaf74a839a772cb164eb36104c3fa4131c61e2d882da819565aba7ad [stream]
+[debug] [2022-11-13T13:35:12.766Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0 200
+[debug] [2022-11-13T13:35:12.766Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/63158d1c01bf70002f259f2278e7704955d3af6a1bc372e069378f6c6ebcc1c0 [stream]
+[debug] [2022-11-13T13:35:12.769Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715 200
+[debug] [2022-11-13T13:35:12.769Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/66023d923ef75cf0e0c79045190eb0531d1006ef93308b316a96b02b91ac1715 [stream]
+[debug] [2022-11-13T13:35:12.888Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06 200
+[debug] [2022-11-13T13:35:12.888Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/c599b7a91ab3627e3538125d9f40adc2d4bf949046984262670545dc7738af06 [stream]
+[debug] [2022-11-13T13:35:12.922Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1 200
+[debug] [2022-11-13T13:35:12.922Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1 [stream]
+[debug] [2022-11-13T13:35:13.144Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca 200
+[debug] [2022-11-13T13:35:13.145Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/8698f3fc439a05dc07845f5973835c8c5a8e7687fd770cf0e76bf94ea1274cca [stream]
+[debug] [2022-11-13T13:35:13.201Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10 200
+[debug] [2022-11-13T13:35:13.202Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shapla-diagnostic-center/versions/8079e01105ae2587/files/2bdca61b71dce0f0c8da1434e6a664039bd1b6a2f836248a3392fde9573c4d10 [stream]
+[debug] [2022-11-13T13:35:13.202Z] [hosting][upload queue][FINAL] {"max":3155,"min":1752,"avg":2455.6428571428573,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":3161}
+[info] ✔  hosting[shapla-diagnostic-center]: file upload complete 
+[debug] [2022-11-13T13:35:13.206Z] [hosting] deploy completed after 5047ms
+[debug] [2022-11-13T13:35:13.216Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "shapla-diagnostic-center"
+    },
+    "version": "projects/591284152986/sites/shapla-diagnostic-center/versions/8079e01105ae2587"
+  }
+]
+[info] i  hosting[shapla-diagnostic-center]: finalizing version... 
+[debug] [2022-11-13T13:35:13.222Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions/8079e01105ae2587 updateMask=status%2Cconfig
+[debug] [2022-11-13T13:35:13.222Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shapla-diagnostic-center/versions/8079e01105ae2587 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
